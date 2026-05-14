@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chính Sách Quyền Riêng Tư - MoniBook</title>
+    <meta name="description" content="Chính sách quyền riêng tư của ứng dụng MoniBook: Quản Lý Chi Tiêu">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366F1;
+            --primary-light: #818CF8;
+            --primary-dark: #4F46E5;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --bg-main: #FAFAFA;
+            --surface: #FFFFFF;
+            --border: #E5E7EB;
+            --text-primary: #111827;
+            --text-secondary: #6B7280;
+            --text-muted: #9CA3AF;
+            --font: 'Inter', -apple-system, sans-serif;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: var(--font);
+            font-size: 0.9375rem;
+            line-height: 1.5;
+            color: var(--text-primary);
+            background: var(--bg-main);
+            min-height: 100vh;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 9999px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        .privacy-wrapper {
+            min-height: 100vh;
+            background: var(--bg-main);
+        }
+
+        .privacy-header {
+            padding: 1rem 2rem;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .privacy-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            font-family: inherit;
+        }
+
+        .privacy-back-link:hover {
+            color: var(--primary);
+        }
+
+        .privacy-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .privacy-content-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            animation: fadeInUp 0.4s ease-out;
+        }
+
+        .privacy-brand {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .privacy-logo {
+            width: 4rem;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .privacy-app-name {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .privacy-date {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .privacy-welcome {
+            margin-bottom: 2rem;
+            padding: 1.25rem;
+            background: var(--bg-main);
+            border-radius: var(--radius-md);
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .privacy-section {
+            margin-bottom: 2rem;
+        }
+
+        .privacy-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .privacy-section-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .privacy-section-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: var(--radius-md);
+            flex-shrink: 0;
+        }
+
+        .privacy-section-icon svg {
+            color: white;
+            width: 1.125rem;
+            height: 1.125rem;
+        }
+
+        .privacy-section p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-subsection {
+            margin-top: 1rem;
+        }
+
+        .privacy-item {
+            padding: 0.875rem 1rem;
+            background: var(--bg-main);
+            border-radius: var(--radius-sm);
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .privacy-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .privacy-item strong {
+            color: var(--text-primary);
+        }
+
+        .privacy-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .privacy-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.625rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .privacy-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .privacy-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .privacy-contact {
+            margin-top: 1rem;
+            padding: 1.25rem;
+            background: var(--bg-main);
+            border-radius: var(--radius-md);
+        }
+
+        .privacy-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .privacy-contact-item svg {
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .privacy-email-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .privacy-email-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .privacy-container {
+                padding: 1rem;
+            }
+
+            .privacy-content-card {
+                padding: 1.5rem;
+            }
+
+            .privacy-title {
+                font-size: 1.25rem;
+            }
+
+            .privacy-section-title {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="privacy-wrapper">
+        <div class="privacy-header">
+            <button onclick="window.close()" class="privacy-back-link">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Đóng
+            </button>
+        </div>
+
+        <div class="privacy-container">
+            <div class="privacy-content-card">
+                <div class="privacy-brand">
+                    <img src="logo.png" alt="MoniBook" class="privacy-logo" />
+                    <h1 class="privacy-title">CHÍNH SÁCH QUYỀN RIÊNG TƯ</h1>
+                    <p class="privacy-app-name">Ứng dụng: MoniBook: Quản Lý Chi Tiêu</p>
+                    <p class="privacy-date">Ngày cập nhật: 14/05/2026</p>
+                </div>
+
+                <div class="privacy-welcome">
+                    <p>Chào mừng bạn đến với <strong>MoniBook</strong>. Chúng tôi cam kết bảo vệ quyền riêng tư của bạn. Chính sách này giải thích cách chúng tôi thu thập, sử dụng và bảo vệ thông tin của bạn khi bạn sử dụng ứng dụng.</p>
+                </div>
+
+                <div class="privacy-section">
+                    <h2 class="privacy-section-title">
+                        <span class="privacy-section-icon">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </span>
+                        1. Thu thập thông tin
+                    </h2>
+                    <p>Chúng tôi thu thập các loại thông tin sau để cung cấp và cải thiện dịch vụ:</p>
+                    
+                    <div class="privacy-subsection">
+                        <div class="privacy-item">
+                            <strong>Thông tin tài khoản:</strong> Khi bạn đăng ký hoặc sử dụng tính năng đăng nhập ẩn danh (Anonymous), chúng tôi lưu trữ mã định danh duy nhất (UID) thông qua Firebase Authentication.
+                        </div>
+                        <div class="privacy-item">
+                            <strong>Dữ liệu chi tiêu:</strong> Các bản ghi về thu nhập, chi tiêu, đầu tư và tiết kiệm mà bạn nhập vào ứng dụng sẽ được lưu trữ trên Firebase Firestore để đồng bộ hóa dữ liệu.
+                        </div>
+                        <div class="privacy-item">
+                            <strong>Thông tin thiết bị:</strong> Chúng tôi có thể thu thập thông tin về thiết bị để tối ưu hóa hiển thị và hiệu suất.
+                        </div>
+                        <div class="privacy-item">
+                            <strong>Dữ liệu thông báo:</strong>
+                            <ul class="privacy-list">
+                                <li><strong>Thông báo từ máy chủ (FCM):</strong> Chúng tôi sử dụng Firebase Cloud Messaging để gửi các thông tin quan trọng, cập nhật tính năng hoặc nhắc nhở ghi chép chi tiêu từ hệ thống đến thiết bị của bạn.</li>
+                                <li><strong>Thông báo tại chỗ (Local Notifications):</strong> Ứng dụng sử dụng thông báo cục bộ được thiết lập trực tiếp trên thiết bị của bạn để gửi các lời nhắc nhắc nhở ghi chép chi tiêu định kỳ mà không cần thu thập hay truyền tải dữ liệu cá nhân qua internet.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="privacy-section">
+                    <h2 class="privacy-section-title">
+                        <span class="privacy-section-icon">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                            </svg>
+                        </span>
+                        2. Sử dụng thông tin
+                    </h2>
+                    <p>Thông tin thu thập được sử dụng cho các mục đích:</p>
+                    <ul class="privacy-list">
+                        <li>Cung cấp các tính năng quản lý tài chính cá nhân.</li>
+                        <li>Đồng bộ hóa dữ liệu giữa các thiết bị của bạn thông qua nền tảng đám mây.</li>
+                        <li>Cải thiện trải nghiệm người dùng thông qua phân tích dữ liệu ẩn danh.</li>
+                        <li>Hiển thị quảng cáo phù hợp thông qua Google AdMob.</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-section">
+                    <h2 class="privacy-section-title">
+                        <span class="privacy-section-icon">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </span>
+                        3. Chia sẻ thông tin với bên thứ ba
+                    </h2>
+                    <p>Chúng tôi hợp tác với các dịch vụ bên thứ ba uy tín để vận hành ứng dụng:</p>
+                    <ul class="privacy-list">
+                        <li><strong>Google Firebase:</strong> Cung cấp dịch vụ xác thực, cơ sở dữ liệu và thông báo đẩy.</li>
+                        <li><strong>Google AdMob:</strong> Hiển thị quảng cáo bên trong ứng dụng.</li>
+                        <li><strong>Play Integrity (App Check):</strong> Để đảm bảo bảo mật và ngăn chặn các hành vi gian lận hoặc truy cập trái phép từ bot.</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-section">
+                    <h2 class="privacy-section-title">
+                        <span class="privacy-section-icon">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </span>
+                        4. Quyền của người dùng
+                    </h2>
+                    <ul class="privacy-list">
+                        <li>Bạn có quyền truy cập, sửa đổi hoặc yêu cầu xóa dữ liệu chi tiêu cá nhân của mình bất kỳ lúc nào ngay trong ứng dụng.</li>
+                        <li>Bạn có quyền từ chối cung cấp một số thông tin, tuy nhiên điều này có thể làm hạn chế một số tính năng của MoniBook.</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-section">
+                    <h2 class="privacy-section-title">
+                        <span class="privacy-section-icon">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </span>
+                        5. Bảo mật dữ liệu
+                    </h2>
+                    <p>Chúng tôi thực hiện các biện pháp bảo mật nghiêm ngặt bao gồm thực thi App Check để bảo vệ dữ liệu khỏi sự truy cập trái phép. Tuy nhiên, không có phương thức truyền tải qua internet nào là an toàn 100%, vì vậy chúng tôi không thể đảm bảo an ninh tuyệt đối.</p>
+                </div>
+
+                <div class="privacy-section">
+                    <h2 class="privacy-section-title">
+                        <span class="privacy-section-icon">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </span>
+                        6. Liên hệ
+                    </h2>
+                    <p>Nếu bạn có bất kỳ câu hỏi nào về chính sách này, vui lòng liên hệ với chúng tôi qua:</p>
+                    <div class="privacy-contact">
+                        <div class="privacy-contact-item">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span>Email: <a href="mailto:support.monibook@gmail.com" class="privacy-email-link">support.monibook@gmail.com</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

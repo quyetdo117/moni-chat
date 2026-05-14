@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../configs/firebase';
 
@@ -137,7 +138,7 @@ export default function Login({ onLoginSuccess }: LoginProps) {
                         </form>
 
                         <p className="login-card-footer">
-                            Chỉ dành cho quản trị viên
+                            <Link to="/privacy-policy" className="login-privacy-link">Chính sách quyền riêng tư</Link>
                         </p>
                     </div>
                 </div>

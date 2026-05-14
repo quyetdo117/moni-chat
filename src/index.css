@@ -109,6 +109,232 @@ body {
 }
 
 /* ================================================
+   PRIVACY POLICY PAGE
+   ================================================ */
+.privacy-wrapper {
+    min-height: 100vh;
+    background: var(--bg-main);
+}
+
+.privacy-header {
+    padding: 1rem 2rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.privacy-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.privacy-back-link:hover {
+    color: var(--primary);
+}
+
+.privacy-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.privacy-content-card {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.privacy-brand {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.privacy-logo {
+    width: 4rem;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.privacy-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.privacy-app-name {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.privacy-date {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.privacy-welcome {
+    margin-bottom: 2rem;
+    padding: 1.25rem;
+    background: var(--bg-main);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.privacy-section {
+    margin-bottom: 2rem;
+}
+
+.privacy-section:last-child {
+    margin-bottom: 0;
+}
+
+.privacy-section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.privacy-section-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+}
+
+.privacy-section-icon svg {
+    color: white;
+    width: 1.125rem;
+    height: 1.125rem;
+}
+
+.privacy-section p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.privacy-subsection {
+    margin-top: 1rem;
+}
+
+.privacy-item {
+    padding: 0.875rem 1rem;
+    background: var(--bg-main);
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.privacy-item:last-child {
+    margin-bottom: 0;
+}
+
+.privacy-item strong {
+    color: var(--text-primary);
+}
+
+.privacy-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.privacy-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.625rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.privacy-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    width: 6px;
+    height: 6px;
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+.privacy-list li:last-child {
+    margin-bottom: 0;
+}
+
+.privacy-contact {
+    margin-top: 1rem;
+    padding: 1.25rem;
+    background: var(--bg-main);
+    border-radius: var(--radius-md);
+}
+
+.privacy-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.privacy-contact-item svg {
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.privacy-email-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.privacy-email-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .privacy-container {
+        padding: 1rem;
+    }
+
+    .privacy-content-card {
+        padding: 1.5rem;
+    }
+
+    .privacy-title {
+        font-size: 1.25rem;
+    }
+
+    .privacy-section-title {
+        font-size: 1rem;
+    }
+}
+
+/* ================================================
    LOGIN PAGE - Split Layout
    ================================================ */
 .login-wrapper {
@@ -306,6 +532,16 @@ body {
     margin-top: 1.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--border);
+}
+
+.login-privacy-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-privacy-link:hover {
+    text-decoration: underline;
 }
 
 /* Responsive */
